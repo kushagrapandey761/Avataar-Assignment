@@ -69,7 +69,7 @@ Generated Image:
 
 2. Artistic Style: The output might vary depending on the complexity of the text prompt and the image. Experimenting with different prompts can improve results.
 
-# # Stable Diffusion Inpainting with Zoom-out Video Generation
+# Stable Diffusion Inpainting with Zoom-out Video Generation
 
 This project generates a series of images using **Stable Diffusion inpainting**, which gradually zooms out from an initial image and then compiles the generated frames into a video.
 
