@@ -65,6 +65,6 @@ Generated Image:
 
 ## Known Issues
 
-Slow Performance on CPU: If a GPU is not available, processing time might be slow, especially for large images.
+1. Slow Performance on CPU: If a GPU is not available, processing time might be slow, especially for large images.
 
-Artistic Style: The output might vary depending on the complexity of the text prompt and the image. Experimenting with different prompts can improve results.
+2. Artistic Style: The output might vary depending on the complexity of the text prompt and the image. Experimenting with different prompts can improve results.
