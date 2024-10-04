@@ -18,3 +18,21 @@ You can install the required libraries using the following commands:
 ```bash
 pip install torch diffusers rembg pillow numpy argparse
 ```
+Additionally, if you have GPU support, you can enable CUDA for faster performance:
+
+```bash
+pip install torch --upgrade --extra-index-url https://download.pytorch.org/whl/cu117
+```
+
+You can run the script from the command line with the following parameters:
+
+```bash
+python run.py --image <image_path> --text-prompt "<your_text_prompt>" --output <output_path>
+```
+
+Example Command:
+
+```bash
+python run.py --image ./example.jpg --text-prompt "A product in a kitchen used in meal preparation" --output ./generated.png
+```
+
