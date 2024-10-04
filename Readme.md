@@ -57,4 +57,4 @@ python run.py --image ./example.jpg --text-prompt "A product in a kitchen used i
 
 Input Image:
 
-(./example1.jpg)
+![](./example1.jpg)
