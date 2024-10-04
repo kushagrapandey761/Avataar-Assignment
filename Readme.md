@@ -62,3 +62,9 @@ Input Image:
 Generated Image:
 
 ![Generated Image](./generated.png)
+
+## Known Issues
+
+Slow Performance on CPU: If a GPU is not available, processing time might be slow, especially for large images.
+
+Artistic Style: The output might vary depending on the complexity of the text prompt and the image. Experimenting with different prompts can improve results.
