@@ -1,6 +1,7 @@
 import rembg
 import torch
 import numpy as np
+import argparse
 from PIL import Image, ImageOps
 from diffusers.utils import load_image
 from diffusers import StableDiffusionInpaintPipeline
@@ -69,9 +70,6 @@ def generate_frames(init_image_path, output_dir, num_frames=30, zoom_out=True):
         result_image.save(frame_path)
         print(f"Saved frame {i + 1}/{num_frames}")
 
-# Generate frames
-generate_frames("example1.jpg", "./frames", num_frames=30, zoom_out=True)
-
 # Compile frames into a video
 def create_video_from_frames(frame_dir, output_video):
     # Get list of frame files
@@ -84,5 +82,23 @@ def create_video_from_frames(frame_dir, output_video):
             video_writer.append_data(frame)
     print(f"Video saved as {output_video}")
 
-# Compile frames into video
-create_video_from_frames("./frames", "generated_zoom_out.mp4")
+# Main function to handle arguments and run the script
+def main():
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description="Generate zoom-out video from an image using Stable Diffusion inpainting.")
+    parser.add_argument('--image', type=str, required=True, help="Path to the input image")
+    parser.add_argument('--output-dir', type=str, default="./frames", help="Directory to save the generated frames")
+    parser.add_argument('--output-video', type=str, default="generated_zoom_out.mp4", help="Path to save the output video")
+    parser.add_argument('--num-frames', type=int, default=30, help="Number of frames to generate")
+    parser.add_argument('--zoom-out', action='store_true', help="Enable zoom-out effect")
+
+    args = parser.parse_args()
+
+    # Generate frames
+    generate_frames(args.image, args.output_dir, num_frames=args.num_frames, zoom_out=args.zoom_out)
+
+    # Compile frames into video
+    create_video_from_frames(args.output_dir, args.output_video)
+
+if __name__ == "__main__":
+    main()
