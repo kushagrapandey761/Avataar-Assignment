@@ -39,7 +39,10 @@ python run.py --image ./example.jpg --text-prompt "A product in a kitchen used i
 ## Arguments
 
 -`--image`: Path to the input image. (e.g., `./example.jpg`)
+
 -`--text-prompt`: Text prompt that describes the scene to guide the inpainting model. (e.g., `"Product in a kitchen used in meal preparation"`)
+
+-`--output`: Path to save the generated output image. (e.g., `./generated.png`)
 
 ## How it Works
 1. Image Resizing and Background Creation: The input image is resized to fit a 512x768 resolution and placed in the center of a larger white background to create a 1024x1536 canvas.
