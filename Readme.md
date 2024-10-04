@@ -24,24 +24,24 @@ Additionally, if you have GPU support, you can enable CUDA for faster performanc
 pip install torch --upgrade --extra-index-url https://download.pytorch.org/whl/cu117
 ```
 
-##Usage
+## Usage
 You can run the script from the command line with the following parameters:
 
 ```bash
 python run.py --image <image_path> --text-prompt "<your_text_prompt>" --output <output_path>
 ```
 
-##Example Command:
+## Example Command:
 
 ```bash
 python run.py --image ./example.jpg --text-prompt "A product in a kitchen used in meal preparation" --output ./generated.png
 ```
-##Arguments
+## Arguments
 
 -`--image`: Path to the input image. (e.g., `./example.jpg`)
 -`--text-prompt`: Text prompt that describes the scene to guide the inpainting model. (e.g., `"Product in a kitchen used in meal preparation"`)
 
-##How it Works
+## How it Works
 1. Image Resizing and Background Creation: The input image is resized to fit a 512x768 resolution and placed in the center of a larger white background to create a 1024x1536 canvas.
 
 2. Mask Creation: Using the rembg library, a mask is created to detect the object in the image, and the mask is then inverted for inpainting.
@@ -50,4 +50,4 @@ python run.py --image ./example.jpg --text-prompt "A product in a kitchen used i
 
 4. Result: The final image is saved at the specified location.
 
-##Example Results
+## Example Results
